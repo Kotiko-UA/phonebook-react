@@ -3,7 +3,7 @@ import { Button, Li, List, P } from './ContactsList.styled';
 import { deleteContacts } from 'components/redux/operations';
 import { filterNumbers } from 'components/redux/filterSlice';
 
-export const Contacts = () => {
+export const ContactsList = () => {
   const dispatch = useDispatch();
   const visibleNumbers = useSelector(filterNumbers);
   const onDelete = delEl => {
@@ -15,7 +15,7 @@ export const Contacts = () => {
         {visibleNumbers.map(user => (
           <Li key={user.id}>
             <P>{user.name}:</P>
-            <P>{user.phone}</P>
+            <P>{user.number}</P>
             <Button onClick={() => onDelete(user.id)} type="button">
               delete
             </Button>

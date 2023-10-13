@@ -21,11 +21,11 @@ export const FormPhoneBook = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const onSubmit = ({ name, number }) => {
-    if (contacts.find(contact => contact.phone === number)) {
+    if (contacts.find(contact => contact.number === number)) {
       Notify.failure(`${number} is alredy in contacts`);
       return;
     }
-    const newContact = { name, phone: number };
+    const newContact = { name, number };
     dispatch(addContacts(newContact));
   };
   return (

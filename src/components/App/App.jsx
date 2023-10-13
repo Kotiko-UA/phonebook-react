@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect, lazy } from 'react';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { Layout } from 'components/Layout/Layout';
@@ -12,7 +12,9 @@ const RegisterPage = lazy(() =>
   import('../../Pages/RegisterPage/RegisterPage')
 );
 const LoginPage = lazy(() => import('../../Pages/Login/Login'));
-const ContactsPage = lazy(() => import('../../Pages/Contacts/Contacts'));
+const ContactsPage = lazy(() =>
+  import('../../Pages/ContactsPage/ContactsPage')
+);
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -27,51 +29,26 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <HomePage />
-            </Suspense>
-          }
-        />
+        <Route index element={<HomePage />} />
         <Route
           path="/register"
           element={
             <RestrictedRoute
               redirectTo="/contacts"
-              component={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <RegisterPage />
-                </Suspense>
-              }
+              component={<RegisterPage />}
             />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute
-              redirectTo="/contacts"
-              component={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <LoginPage />
-                </Suspense>
-              }
-            />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
         <Route
           path="/contacts"
           element={
-            <PrivateRoute
-              redirectTo="/login"
-              component={
-                <Suspense fallback={<div>Loading...</div>}>
-                  <ContactsPage />
-                </Suspense>
-              }
-            />
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
       </Route>
