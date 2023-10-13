@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Li, List, P } from './ContactsList.styled';
-import { deleteContacts } from 'components/redux/operations';
+import { deleteContacts, fetchContacts } from 'components/redux/operations';
 import { filterNumbers } from 'components/redux/filterSlice';
+import { useEffect } from 'react';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
@@ -9,6 +10,9 @@ export const ContactsList = () => {
   const onDelete = delEl => {
     dispatch(deleteContacts(delEl));
   };
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   return (
     <div>
       <List>
