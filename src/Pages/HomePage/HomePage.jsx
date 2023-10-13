@@ -2,9 +2,9 @@ const HomePage = () => {
   return (
     <div>
       <h1>
-        Task manager welcome page{' '}
+        Contact manager welcome page
         <span role="img" aria-label="Greeting icon">
-          💁‍♀️
+          🙀
         </span>
       </h1>
     </div>

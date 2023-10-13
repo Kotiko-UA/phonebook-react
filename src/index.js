@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { persistor, store } from 'components/redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter basename="/goit-react-hw-08-phonebook">
           <App />
           <GlobalStyle />
+          <Toaster />
         </BrowserRouter>
       </PersistGate>
     </Provider>

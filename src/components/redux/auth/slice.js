@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
+import toast from 'react-hot-toast';
 
 const initialState = {
   user: { name: null, email: null },
@@ -18,10 +19,16 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
+      .addCase(register.rejected, (_, { payload }) => {
+        toast.error('email is already used');
+      })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+      })
+      .addCase(logIn.rejected, (_, { payload }) => {
+        toast.error('email or password is wrong');
       })
       .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
