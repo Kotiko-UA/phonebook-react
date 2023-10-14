@@ -1,13 +1,10 @@
+import { HomePageWrap, HomeTitle } from './HomePage.styled';
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>
-        Contact manager welcome page
-        <span role="img" aria-label="Greeting icon">
-          🙀
-        </span>
-      </h1>
-    </div>
+    <HomePageWrap>
+      <HomeTitle>Your personal contacts book, meow!</HomeTitle>
+    </HomePageWrap>
   );
 };
 export default HomePage;
