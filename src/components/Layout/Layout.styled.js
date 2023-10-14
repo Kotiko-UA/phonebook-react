@@ -5,6 +5,7 @@ export const Wrapper = styled.section`
   margin: 0 auto;
 `;
 export const Container = styled.div`
+  margin: 0 auto;
   max-width: 1280px;
   padding-top: 20px;
   padding-left: 20px;

@@ -7,21 +7,30 @@ export const Error = styled(ErrorMessage)`
 export const FormEl = styled(Form)`
   display: flex;
   flex-direction: column;
-  gap: 8px;
   align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
 `;
 export const Button = styled.button`
+  font-size: 20px;
   padding: 8px;
-  display: block;
-  background-color: #fff;
-  border: 2px solid blueviolet;
+  border: 1px solid #9f7b33;
   border-radius: 8px;
+  color: #9f7b33;
+  background-color: #f2ece0;
 `;
 export const Input = styled(Field)`
-  margin-left: 8px;
+  font-size: 18px;
+  color: #9f7b33;
+  background-color: #fffaec;
+  padding-left: 8px;
+  padding-right: 8px;
 `;
 export const Label = styled.label`
-  display: flex;
-  flex-direction: column;
   font-size: 18px;
+  color: #9f7b33;
+  background-color: #fffaec;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 8px;
 `;

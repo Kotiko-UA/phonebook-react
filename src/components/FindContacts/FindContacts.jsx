@@ -1,5 +1,6 @@
 import { filterStatus } from 'components/redux/filterSlice';
 import { useDispatch } from 'react-redux';
+import { Input, Text } from './FindContacts.styled';
 
 export const FindContacts = () => {
   const dispatch = useDispatch();
@@ -8,8 +9,8 @@ export const FindContacts = () => {
   };
   return (
     <div>
-      <p>find contacts by name</p>
-      <input onChange={onFindUser} name="findName" type="text" />
+      <Text>find contacts by name</Text>
+      <Input onChange={onFindUser} name="findName" type="text" />
     </div>
   );
 };

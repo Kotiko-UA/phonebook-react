@@ -3,19 +3,20 @@ import { useSelector } from 'react-redux';
 import { FormPhoneBook } from 'components/Form/Form';
 import { FindContacts } from 'components/FindContacts/FindContacts';
 import { ContactsList } from 'components/ContactsList/ContactsList';
+import { PageWrapper, Text } from './ContactsPage.styled';
 
 const ContactsPage = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <PageWrapper>
+      <Text>Add to somebody to contacts, meow!</Text>
       <FormPhoneBook />
-      <h2>Contacts</h2>
+      <Text>Contacts</Text>
       {isLoading && !error && <div>Request in progress...</div>}
       <FindContacts />
       <ContactsList />
-    </div>
+    </PageWrapper>
   );
 };
 export default ContactsPage;

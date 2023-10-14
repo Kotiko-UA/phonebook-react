@@ -12,12 +12,21 @@ export const Li = styled.li`
   flex-wrap: nowrap;
 `;
 export const P = styled.p`
-  font-size: 20px;
+  display: block;
+  padding: 4px;
+  border: 1px solid #9f7b33;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #9f7b33;
+  background-color: #fffaec;
+  padding-left: 8px;
+  padding-right: 8px;
 `;
 export const Button = styled.button`
   padding: 4px;
   display: block;
-  background-color: #fff;
-  border: 2px solid blueviolet;
+  color: #fffaec;
+  background-color: #9f7b33;
+  border: 2px solid #9f7b33;
   border-radius: 8px;
 `;
